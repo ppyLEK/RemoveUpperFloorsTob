@@ -23,19 +23,16 @@ public class RemoveUpperFloorsTobPlugin extends Plugin
 	@Inject
 	private Client client;
 
-	@Inject
-	private ExampleConfig config;
-
 	@Override
 	protected void startUp() throws Exception
 	{
-		log.info("RemoveTobWall started!");
+		log.info("RemoveUpperFloorsTob started!");
 	}
 
 	@Override
 	protected void shutDown() throws Exception
 	{
-		log.info("RemoveTobWall stopped!");
+		log.info("RemoveUpperFloorsTob stopped!");
 	}
 
 	private void removeUpperFloors()
@@ -76,11 +73,5 @@ public class RemoveUpperFloorsTobPlugin extends Plugin
 		int regionId = WorldPoint.fromLocalInstance(client, client.getLocalPlayer().getLocalLocation()).getRegionID();
 
         return regionId == 14642 || regionId == 14386;
-	}
-
-	@Provides
-	ExampleConfig provideConfig(ConfigManager configManager)
-	{
-		return configManager.getConfig(ExampleConfig.class);
 	}
 }
